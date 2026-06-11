@@ -17,13 +17,14 @@
         }
 
         body {
-            background: #050816;
-            color: #ffffff;
+            /* Tema Cerah (Premium Light Theme) */
+            background: #f4f7fb; 
+            color: #1a202c;
             overflow-x: hidden;
             line-height: 1.6;
         }
 
-        /* Background Ambient Glow */
+        /* Background Ambient Glow Halus */
         body::before {
             content: '';
             position: fixed;
@@ -32,8 +33,8 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 15% 30%, rgba(13, 110, 253, 0.15), transparent 40%),
-                radial-gradient(circle at 85% 80%, rgba(0, 102, 255, 0.1), transparent 40%);
+                radial-gradient(circle at 15% 30%, rgba(0, 102, 255, 0.05), transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(0, 183, 255, 0.05), transparent 40%);
             z-index: -1;
         }
 
@@ -42,19 +43,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
+            padding: 15px 8%;
             position: fixed;
             width: 100%;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            background: rgba(5, 8, 22, 0.7);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.9); /* Navbar Putih Transparan */
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             z-index: 999;
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
         }
 
         .logo img {
-            height: 40px; /* Menyesuaikan tinggi logo di navbar */
+            height: 70px; /* Ukuran Logo Diperbesar secara signifikan */
             width: auto;
             display: block;
             transition: transform 0.3s ease;
@@ -71,16 +72,16 @@
         }
 
         nav a {
-            color: #b9c6e3;
+            color: #4a5568; /* Teks Menu Abu-abu Gelap */
             text-decoration: none;
             font-size: 0.95rem;
-            font-weight: 500;
+            font-weight: 600;
             transition: 0.3s ease;
             position: relative;
         }
 
         nav a:hover {
-            color: #ffffff;
+            color: #0066ff;
         }
 
         nav a::after {
@@ -90,7 +91,7 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background: #4da3ff;
+            background: #0066ff;
             transition: 0.3s ease;
         }
 
@@ -127,17 +128,18 @@
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 25px;
+            color: #0a192f;
         }
 
         .hero-text span {
-            background: linear-gradient(135deg, #4da3ff, #0066ff);
+            background: linear-gradient(135deg, #0066ff, #00b7ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero-text p {
             font-size: 1.1rem;
-            color: #8ca0c7;
+            color: #4a5568;
             line-height: 1.8;
             margin-bottom: 40px;
         }
@@ -151,12 +153,11 @@
 
         .hero-image img {
             width: 100%;
-            max-width: 450px;
-            filter: drop-shadow(0 0 35px rgba(0, 102, 255, 0.3));
+            max-width: 500px;
+            filter: drop-shadow(0 15px 35px rgba(0, 102, 255, 0.15));
             animation: float 6s ease-in-out infinite;
         }
 
-        /* Keyframe untuk animasi mengambang halus pada gambar */
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-15px); }
@@ -175,11 +176,22 @@
             letter-spacing: 0.5px;
             transition: all 0.4s ease;
             box-shadow: 0 10px 20px rgba(0, 102, 255, 0.2);
+            border: none;
+            cursor: pointer;
         }
 
         .btn:hover {
             transform: translateY(-4px);
             box-shadow: 0 15px 30px rgba(0, 102, 255, 0.4);
+        }
+
+        .btn-wa {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+        }
+
+        .btn-wa:hover {
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
         }
 
         /* === SECTIONS GENERAL === */
@@ -194,134 +206,120 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 60px;
+            color: #0a192f;
         }
 
         .section-title span {
-            color: #4da3ff;
+            color: #0066ff;
         }
 
-        /* === SERVICES CARDS === */
-        .services {
+        /* === SERVICES & PORTFOLIO CARDS === */
+        .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: #ffffff; /* Kartu Putih Bersih */
+            border: 1px solid rgba(0, 0, 0, 0.05);
             padding: 40px 30px;
             border-radius: 24px;
             transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
 
         .card:hover {
             transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(77, 163, 255, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 102, 255, 0.1);
+            border-color: rgba(0, 102, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.1);
         }
 
         .card h3 {
             font-size: 1.4rem;
             margin-bottom: 15px;
-            color: #ffffff;
+            color: #0a192f;
             font-weight: 600;
         }
 
         .card p {
-            color: #8ca0c7;
+            color: #4a5568;
             font-size: 0.95rem;
             line-height: 1.7;
         }
 
-        /* === WHY US === */
-        .why {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-        }
-
-        .stat {
+        /* === ABOUT SECTION === */
+        .about-content {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 50px;
+            border-radius: 30px;
             text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%);
-            border-top: 1px solid rgba(255,255,255,0.1);
-            border-radius: 24px;
-            transition: 0.3s;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
 
-        .stat:hover {
-            background: linear-gradient(180deg, rgba(77,163,255,0.1) 0%, rgba(255,255,255,0) 100%);
-            border-top-color: #4da3ff;
+        .about-content p {
+            color: #4a5568;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
         }
 
-        .stat h2 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #ffffff, #4da3ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
-
-        .stat p {
-            color: #8ca0c7;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-        }
-
-        /* === CALL TO ACTION === */
-        .cta {
+        /* === CONTACT SECTION === */
+        .contact-box {
             text-align: center;
-            background: linear-gradient(135deg, rgba(0, 71, 179, 0.4), rgba(3, 27, 78, 0.8));
-            border: 1px solid rgba(77, 163, 255, 0.2);
+            background: linear-gradient(135deg, #e8f0fe, #ffffff);
+            border: 1px solid rgba(0, 102, 255, 0.1);
             border-radius: 30px;
             padding: 80px 40px;
-            position: relative;
-            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
         }
 
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(77,163,255,0.1) 0%, transparent 60%);
-            z-index: 0;
+        .contact-box h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #0a192f;
         }
 
-        .cta h2, .cta p, .cta a {
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta h2 {
-            font-size: 2.8rem;
-            margin-bottom: 25px;
-            font-weight: 700;
-        }
-
-        .cta p {
-            max-width: 700px;
-            margin: 0 auto 40px;
-            color: #b9c6e3;
+        .contact-box p {
+            color: #4a5568;
             font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .contact-details {
+            margin-bottom: 40px;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 15px;
+            display: inline-block;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .contact-details p {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #1a202c;
+        }
+        
+        .contact-details strong {
+            color: #0066ff;
         }
 
         /* === FOOTER === */
         footer {
             padding: 40px 8%;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: #63769d;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            color: #718096;
             font-size: 0.9rem;
-            background: #03050d;
+            background: #ffffff;
         }
 
         /* === RESPONSIVE DESIGN === */
@@ -331,18 +329,9 @@
                 text-align: center;
                 gap: 40px;
             }
-            
-            .hero-text h1 {
-                font-size: 2.8rem;
-            }
-
-            .hero-text p {
-                margin: 0 auto 35px;
-            }
-
-            nav ul {
-                display: none; /* Menu disembunyikan untuk tampilan mobile */
-            }
+            .hero-text h1 { font-size: 2.8rem; }
+            nav ul { display: none; }
+            .about-content { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -350,38 +339,38 @@
 
     <!-- Navbar -->
     <nav>
-        <a href="#" class="logo">
-            <!-- Pastikan nama file gambar logo Anda adalah Jholang_Web_Digital_Solution.png atau sesuaikan dengan nama filenya -->
+        <a href="#home" class="logo">
+            <!-- Nama file gambar telah diubah menjadi logo.png agar anti-error -->
             <img src="logo.png" alt="JHOLANG Logo">
         </a>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Transforming Ideas Into <span>Powerful Digital Solutions</span></h1>
                 <p>JHOLANG Web Digital Solutions membantu perusahaan, UMKM, startup, dan organisasi membangun website profesional, portal internal, sistem manajemen, hingga web application berbasis cloud yang modern, aman, dan scalable.</p>
-                <a href="#" class="btn">Konsultasi Sekarang</a>
+                <a href="#contact" class="btn">Konsultasi Sekarang</a>
             </div>
             <div class="hero-image">
-                <!-- Gambar logo besar di hero section -->
-                <img src="Jholang Web Digital Solution.png" alt="JHOLANG Logo Hero">
+                <!-- Nama file gambar telah diubah menjadi logo.png -->
+                <img src="logo.png" alt="JHOLANG Logo Hero">
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section>
+    <section id="services">
         <h2 class="section-title">Our <span>Services</span></h2>
-        <div class="services">
+        <div class="grid-container">
             <div class="card">
                 <h3>Corporate Website</h3>
                 <p>Website perusahaan modern dengan desain premium, SEO friendly, mobile responsive, dan sangat profesional.</p>
@@ -396,46 +385,65 @@
             </div>
             <div class="card">
                 <h3>System Integration</h3>
-                <p>Integrasi database terpusat, API pihak ketiga, sistem cloud, dan otomatisasi alur kerja perusahaan.</p>
+                <p>Integrasi database terpusat, setup server infrastruktur (Windows Server, Active Directory), jaringan, dan otomatisasi alur kerja.</p>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section>
-        <h2 class="section-title">Why Choose <span>JHOLANG</span></h2>
-        <div class="why">
-            <div class="stat">
-                <h2>100%</h2>
-                <p>Custom Development</p>
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2 class="section-title">Our <span>Portfolio</span></h2>
+        <p style="text-align: center; color: #4a5568; max-width: 700px; margin: 0 auto 50px;">Berikut adalah beberapa konsep arsitektur sistem dan solusi digital yang siap kami kembangkan dan integrasikan untuk skala bisnis Anda.</p>
+        
+        <div class="grid-container">
+            <div class="card">
+                <h3>Sistem Absensi & Payroll Otomatis</h3>
+                <p>Pengembangan sistem perhitungan kehadiran tingkat lanjut yang mampu mengelola jam kerja fleksibel, shift malam, pendeteksian keterlambatan, hingga kalkulasi lembur secara presisi dan terstruktur.</p>
             </div>
-            <div class="stat">
-                <h2>24/7</h2>
-                <p>Technical Support</p>
+            <div class="card">
+                <h3>Web Portal Internal Karyawan</h3>
+                <p>Pembuatan portal berbasis cloud (termasuk integrasi sistem Google Apps Script pada subdomain khusus) untuk memudahkan manajemen cuti, pengajuan operasional, dan monitoring keamanan data.</p>
             </div>
-            <div class="stat">
-                <h2>Secure</h2>
-                <p>Enterprise Security</p>
-            </div>
-            <div class="stat">
-                <h2>Cloud</h2>
-                <p>Ready Infrastructure</p>
+            <div class="card">
+                <h3>Setup Client-Server Infrastruktur</h3>
+                <p>Instalasi dan konfigurasi lingkungan server mandiri untuk perusahaan skala kecil-menengah, termasuk manajemen otentikasi user terpusat dan tata kelola folder sharing yang aman.</p>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section>
-        <div class="cta">
-            <h2>Ready To Digitize Your Business?</h2>
-            <p>Bangun website perusahaan, sistem HR terintegrasi, portal karyawan, dashboard monitoring, dan solusi digital lainnya bersama arsitek sistem JHOLANG.</p>
-            <a href="#" class="btn">Hubungi Tim Kami</a>
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <div class="about-content">
+            <p>Perkenalkan, saya <strong>Yongky Adiputra</strong>, pendiri JHOLANG Web Digital Solutions. Berangkat dari dedikasi dan eksplorasi mendalam secara otodidak di bidang infrastruktur IT dan administrasi sistem, saya membangun agensi ini untuk menjembatani kebutuhan teknologi perusahaan modern.</p>
+            <p>Pengalaman teknis saya dibentuk secara nyata melalui penerapan solusi IT di industri skala besar. Dari membangun sistem jaringan mandiri, merancang portal web operasional perusahaan, hingga mengembangkan sistem otomasi pengolahan data yang sangat detail, saya terbiasa memecahkan masalah teknis yang rumit menjadi solusi yang terstruktur.</p>
+            <p>Di JHOLANG, pendekatan saya bukan sekadar membuat website yang terlihat bagus, melainkan membangun infrastruktur digital—baik front-end maupun back-end—yang benar-benar bekerja efisien untuk menyederhanakan proses bisnis klien.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-box">
+            <h3>Mari Diskusikan Proyek Anda</h3>
+            <p>Siap untuk digitalisasi bisnis Anda? Hubungi saya secara langsung untuk konsultasi kebutuhan website, server, maupun sistem administrasi perusahaan.</p>
+            
+            <div class="contact-details">
+                <p><strong>Nama:</strong> Yongky Adiputra</p>
+                <p><strong>Telepon/WA:</strong> 08119731218</p>
+                <p><strong>Alamat:</strong> Bejiruyung Rt:02 Rw:03, Kec. Sempor, Kab. Kebumen, Jawa Tengah 54421</p>
+            </div>
+            <br>
+            
+            <!-- Tombol Direct WhatsApp -->
+            <a href="https://wa.me/628119731218?text=Halo%20Mas%20Yongky,%20saya%20ingin%20berkonsultasi%20mengenai%20pembuatan%20website/sistem%20digital." target="_blank" class="btn btn-wa">
+                Chat via WhatsApp
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        © 2026 JHOLANG Web Digital Solutions. All Rights Reserved.
+        © 2026 JHOLANG Web Digital Solutions by Yongky Adiputra. All Rights Reserved.
     </footer>
 
 </body>
